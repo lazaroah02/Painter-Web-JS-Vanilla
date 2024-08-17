@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painter Web Vanilla</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <h1 class = "title">Painter Web con JS Vanilla</h1>
+    <main>
+        <canvas id = "canvas" width="1070" height="730"></canvas>
+        <aside>
+            <h1>Opciones</h1>
+            <form onsubmit="" action="">
+                <div class = "option-field thickness-param-container">
+                    <label for = "drawing-thickness">Grosor</label>
+                    <input 
+                        id = "drawing-thickness" 
+                        type = "range" 
+                        min="1" 
+                        max="20" 
+                        step = "1" 
+                        onchange="changeThickness(this.value)" 
+                        value = "1"
+                        />
+                </div>
+                <div class = "option-field opacity-param-container">
+                    <label for = "drawing-opacity">Opacidad</label>
+                    <input 
+                        id = "drawing-opacity" 
+                        type = "range" 
+                        min="0" 
+                        max="1" 
+                        step = "0.1" 
+                        onchange="changeDrawingOpacity(this.value)" 
+                        value = "1"
+                        />
+                </div>
+                <div class = "option-field color-param-container">
+                    <label for = "drawing-color" >Color</label>
+                    <input 
+                        id = "drawing-color" 
+                        type = "color" 
+                        onchange="changeDrawingColor(this.value)" 
+                        />
+                </div>
+            </form>
+            <section class = "shortcuts-section">
+                <h1>
+                    Atajos
+                </h1>
+                <ul>
+                    <li>Ctr + Z para deshacer</li>
+                    <li>Ctr + Y para restaurar lo deshecho</li>
+                </ul>
+            </section>
+            <section class = "action-buttons-container">
+                <button onclick="clearCanvas()">Limpiar Pizarra</button>
+                <button onclick = "exportDrawing()">Exportar</button>
+            </section>
+        </aside>
+    </main>
+    <footer>Creado por <a href = "https://github.com/lazaroah02" target="_blank">Lazaro Altedill</a></footer>
+</body>
+<script type="text/javascript" src = "./sidebar_controller.js"></script>
+<script type="text/javascript" src = "./utils.js"></script>
+<script type="text/javascript" src = "./index.js"></script>
+</html>
